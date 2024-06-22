@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Accordion Tutorial</title>
+    <style>
+        .according {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 450px;
+        }
+        .according-item {
+            margin-bottom: 10px;
+        }
+        .according-title {
+            color: white;
+            background: red;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 1s;
+        }
+        .according-title:hover {
+            background: #9a1616;
+        }
+        .according-content {
+            background: #e6d6a4;
+            padding: 10px;
+            display: none;
+        }
+        .according-item.active .according-content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Accordion Tutorial</h1>
+    <div class="according">
+        <div class="according-item">
+            <div class="according-title">
+                According Title 1
+            </div>
+            <div class="according-content">
+                According Content 1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus pariatur ex sed iste aperiam quibusdam itaque? Cum optio autem sed vero repellat unde esse eaque. Et officiis rerum sit unde.
+            </div>
+        </div>
+        <div class="according-item">
+            <div class="according-title">
+                According Title 2
+            </div>
+            <div class="according-content">
+                According Content 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus pariatur ex sed iste aperiam quibusdam itaque? Cum optio autem sed vero repellat unde esse eaque. Et officiis rerum sit unde.
+            </div>
+        </div>
+        <div class="according-item">
+            <div class="according-title">
+                According Title 3
+            </div>
+            <div class="according-content">
+                According Content 3 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus pariatur ex sed iste aperiam quibusdam itaque? Cum optio autem sed vero repellat unde esse eaque. Et officiis rerum sit unde.
+            </div>
+        </div>
+        <div class="according-item">
+            <div class="according-title">
+                According Title 4
+            </div>
+            <div class="according-content">
+                According Content 4 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus pariatur ex sed iste aperiam quibusdam itaque? Cum optio autem sed vero repellat unde esse eaque. Et officiis rerum sit unde.
+            </div>
+        </div>
+    </div>
+    <script>
+        const accordingItems = document.querySelectorAll('.according-item');
+
+        accordingItems.forEach(item => {
+
+            const title = item.querySelector('.according-title');
+            const content = item.querySelector('.according-content');
+            
+            title.addEventListener('click', () => {
+                for (let i = 0; i < accordingItems.length; i++) {
+                    if (accordingItems[i] != item) {
+                        accordingItems[i].classList.remove('active');
+                    } else {
+                        item.classList.toggle('active');
+                    }
+                }
+            });
+
+        });
+</script>
+</body>
+</html>
